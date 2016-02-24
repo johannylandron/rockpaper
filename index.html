@@ -1,0 +1,148 @@
+<body>
+  <head>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+    <script>
+
+      $(document).ready(function() {
+      
+        // ****** STEP ONE ******
+        // attach a click event listener here
+        // to your play button (get its ID at the bottom of this page)
+        // and attach it to the play function
+      
+      });
+      
+      ////////////////////////////////////////////////
+      // these are helper functions, don't touch!
+      ////////////////////////////////////////////////
+      function getRandomPlay(){
+        var outcomeArray = ["Rock", "Paper", "Scissors"];
+        return outcomeArray[ Math.floor(Math.random() * outcomeArray.length) ];
+      }
+      
+      function resetFaces(){
+        $(".girl").removeClass("girl-lose"); 
+        $(".boy").removeClass("boy-lose");  
+      }
+      ////////////////////////////////////////////////
+      // end of helper functions
+      ////////////////////////////////////////////////
+      
+      
+      function play(){
+        
+        resetFaces();
+        
+        var boyPlayed = getRandomPlay();
+        var girlPlayed = getRandomPlay();
+        
+        $("#girlResult").html(boyPlayed);
+        $("#boyResult").html(girlPlayed);
+  
+        if(boyPlayed == girlPlayed){
+        
+          tie(); 
+        
+        } else{
+
+          // ****** STEP TWO ******
+          // there are three conditions where the boy could win
+          // 1. if boy played Rock and girl played Scissors
+          // 2. if boy played Paper and girl played Rock
+          // 3. if boy played Scissors and girl played Paper
+          
+          // write an if / if else statements testing for these
+          // conditions. If the boy wins, run the function boyWins(),
+          // If the girl wins, run the function girlWins()
+          // hints: == tests if two things are equal, && means "and"
+          // if (boyPlayed == "Rock" && girlPlayed == "Scissors") {}
+          
+        }
+              
+      }
+      
+      function tie(){
+        $("#message").html("It's a tie. Try again.");  
+      }
+      
+      function boyWins(){
+        // ****** STEP THREE ******
+        // add the class "girl-lose" to the girl div
+        $("#message").html("Boy wins!");
+      }
+      
+      function girlWins(){
+        // ****** STEP THREE ******
+        // add the class "boy-lose" to the boy div  
+        $("#message").html("Girl wins!");
+      }
+      
+    </script>
+    <style>
+      body{
+        text-align: center;
+      }
+      button{
+        padding:20px;
+        border-radius: 15px;
+        background: green;
+        color:white;
+        font-size: 30px;
+        margin-top:50px;
+      }
+      .boy{
+        width: 148px;
+        height:208px; 
+        background-image: url("boy-smile.jpg");
+        background-repeat: no-repeat;
+        margin:auto;
+      }
+      .boy-lose{
+        background-image: url("boy-jaw-drop.jpg");  
+      }
+      .girl{
+        width: 148px;
+        height:208px; 
+        background-image: url("girl-smile.jpg");
+        background-repeat: no-repeat;  
+        margin:auto;
+      }      
+      .girl-lose{
+        background-image: url("girl-jaw-drop.jpg");  
+      }
+      .result{
+        font-size: 30px;
+      }
+      .message{
+        margin-top:30px;
+        font-size: 30px;
+        color: #3d6bbf
+      }
+    </style>
+    
+  </head>
+  <body>
+    
+    <div class="girl">
+    </div>
+    <div id="girlResult" class="result">
+      Ready!
+    </div>
+
+    <div class="boy">
+    </div>
+    <div id="boyResult" class="result">
+      Ready!
+    </div>
+    
+
+    <div id="message" class="message">
+      Press play to begin!
+    </div>
+        
+    <button id="playButton">Play!</button>
+    
+  </body>
+</body>
