@@ -1,0 +1,39 @@
+body{
+  text-align: center;
+}
+button{
+  padding:20px;
+  border-radius: 15px;
+  background: green;
+  color:white;
+  font-size: 30px;
+  margin-top:50px;
+}
+.boy{
+  width: 148px;
+  height:208px; 
+  background-image: url("boy-smile.jpg");
+  background-repeat: no-repeat;
+  margin:auto;
+}
+.boy-lose{
+  background-image: url("boy-jaw-drop.jpg");  
+}
+.girl{
+  width: 148px;
+  height:208px; 
+  background-image: url("girl-smile.jpg");
+  background-repeat: no-repeat;  
+  margin:auto;
+}      
+.girl-lose{
+  background-image: url("girl-jaw-drop.jpg");  
+}
+.result{
+  font-size: 30px;
+}
+.message{
+  margin-top:30px;
+  font-size: 30px;
+  color: #3d6bbf
+}
