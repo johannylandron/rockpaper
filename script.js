@@ -1,5 +1,5 @@
       $(document).ready(function() {
-      
+        $("#playButton").click(play);
         // ****** STEP ONE ******
         // attach a click event listener here
         // to your play button (get its ID at the bottom of this page)
@@ -51,13 +51,23 @@
           // If the girl wins, run the function girlWins()
           // hints: == tests if two things are equal, && means "and"
           // if (boyPlayed == "Rock" && girlPlayed == "Scissors") {}
-          
+          if(boyPlayed == "Rock" && girlPlayed=="scissors"){
+            boyWins()
+          }
+          else if (boyPlayed == "paper" && girlPlayed=="rock"){ 
+            boyWins();
+          }
+          else if (boyPlayed == "scissors" && girlPlayed == "paper"){
+            boyWins();
+          }
+          else {
+            girlWins();
+          }
         }
-              
       }
-      
       function tie(){
         $("#message").html("It's a tie. Try again.");  
+        
       }
       
       function boyWins(){
